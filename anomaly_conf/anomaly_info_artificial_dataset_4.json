@@ -1,0 +1,115 @@
+{
+    "data_conf": {
+        "input_ch_name": [
+            "Feature_1",
+            "Feature_2",
+            "Feature_3",
+            "Feature_4",
+            "Feature_5"
+        ],
+        "output_ch_name": [
+            "Target"
+        ],
+        "history_input_length": 24,
+        "pred_ahead_output_length": 24,
+        "interpolation_days": 7,
+        "resolution": 10,
+        "interval": 6,
+        "batch_size": 128,
+        "val_size": 0.3,
+        "outlier_prob_smooth": 36
+    },
+    "model_conf": {
+        "MCDHDNN": {
+            "opt": "adam",
+            "lr": 0.001,
+            "epochs": 128,
+            "weight_decay": 0,
+            "dropout_method": "gaussian",
+            "dropout_rate": 0.2,
+            "ann_structure": [
+                1024,
+                512,
+                256
+            ],
+            "sample_num": 50
+        },
+        "VEHDNN": {
+            "opt": "adam",
+            "lr": 0.001,
+            "epochs": 128,
+            "weight_decay": 0,
+            "dropout_method": "gaussian",
+            "dropout_rate": 0.2,
+            "ann_structure": [
+                1024,
+                512,
+                256
+            ],
+            "sample_num": 50
+        },
+        "VEHLSTM": {
+            "opt": "adam",
+            "lr": 0.001,
+            "epochs": 128,
+            "weight_decay": 0,
+            "input_size": 5,
+            "hidden_size": 128,
+            "num_layers": 2,
+            "output_size": 1,
+            "proj_size": 1,
+            "sample_num": 50
+        }
+    },
+    "detection_conf": {
+        "MCDHDNN": {
+            "detection_model": "isolationforest",
+            "detect_model_threshold": 0.9999,
+            "outlier_prob_threshold": 0.5,
+            "is_clustering": false,
+            "is_input_check": false,
+            "anomaly_clustering_eps": 0.50,
+            "outlier_prob_smooth": 36
+        },
+        "VEHDNN": {
+            "detection_model": "isolationforest",
+            "detect_model_threshold": 0.9999,
+            "outlier_prob_threshold": 0.5,
+            "is_clustering": false,
+            "is_input_check": false,
+            "anomaly_clustering_eps": 0.50,
+            "outlier_prob_smooth": 36
+        },
+        "VEHLSTM": {
+            "detection_model": "isolationforest",
+            "detect_model_threshold": 0.999,
+            "outlier_prob_threshold": 0.5,
+            "is_clustering": false,
+            "is_input_check": false,
+            "anomaly_clustering_eps": 0.50,
+            "outlier_prob_smooth": 36
+        }
+    },
+    "anomaly_info": [
+        {
+            "start": "2019-10-06 04:00",
+            "end": "2019-11-15 03:50",
+            "anomaly_type": 4,
+            "in_channel": [
+                "Feature_1",
+                "Feature_2",
+                "Feature_3",
+                "Feature_4",
+                "Feature_5"
+            ],
+            "out_channel": [
+                "Target"
+            ],
+            "increasing": false,
+            "alpha": 0.05,
+            "beta": 0.01,
+            "b": 0.00,
+            "type": "synthetic"
+        }
+    ]
+}

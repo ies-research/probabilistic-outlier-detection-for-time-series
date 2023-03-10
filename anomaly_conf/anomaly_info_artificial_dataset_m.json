@@ -1,0 +1,616 @@
+{
+    "data_conf": {
+        "input_ch_name": [
+            "Feature_1",
+            "Feature_2",
+            "Feature_3",
+            "Feature_4",
+            "Feature_5"
+        ],
+        "output_ch_name": [
+            "Target"
+        ],
+        "history_input_length": 24,
+        "pred_ahead_output_length": 24,
+        "interpolation_days": 7,
+        "resolution": 10,
+        "interval": 6,
+        "batch_size": 128,
+        "val_size": 0.3,
+        "outlier_prob_smooth": 36,
+        "data_version": 1
+    },
+    "model_conf": {
+        "MCDHDNN": {
+            "opt": "adam",
+            "lr": 0.001,
+            "epochs": 128,
+            "weight_decay": 0,
+            "dropout_method": "gaussian",
+            "dropout_rate": 0.2,
+            "ann_structure": [
+                1024,
+                512,
+                256
+            ],
+            "sample_num": 50
+        },
+        "VEHDNN": {
+            "opt": "adam",
+            "lr": 0.001,
+            "epochs": 128,
+            "weight_decay": 0,
+            "dropout_method": "gaussian",
+            "dropout_rate": 0.2,
+            "ann_structure": [
+                1024,
+                512,
+                256
+            ],
+            "sample_num": 50
+        },
+        "VEHLSTM": {
+            "opt": "adam",
+            "lr": 0.001,
+            "epochs": 128,
+            "weight_decay": 0,
+            "input_size": 5,
+            "hidden_size": 128,
+            "num_layers": 2,
+            "output_size": 1,
+            "proj_size": 1,
+            "sample_num": 50
+        }
+    },
+    "detection_conf": {
+        "MCDHDNN": {
+            "detection_model": "isolationforest",
+            "detect_model_threshold": 0.9999,
+            "outlier_prob_threshold": 0.5,
+            "is_clustering": true,
+            "is_input_check": false,
+            "anomaly_clustering_eps": 0.60,
+            "outlier_prob_smooth": 36
+        },
+        "VEHDNN": {
+            "detection_model": "isolationforest",
+            "detect_model_threshold": 0.9999,
+            "outlier_prob_threshold": 0.5,
+            "is_clustering": true,
+            "is_input_check": false,
+            "anomaly_clustering_eps": 0.60,
+            "outlier_prob_smooth": 36
+        },
+        "VEHLSTM": {
+            "detection_model": "isolationforest",
+            "detect_model_threshold": 0.999,
+            "outlier_prob_threshold": 0.5,
+            "is_clustering": true,
+            "is_input_check": false,
+            "anomaly_clustering_eps": 0.6,
+            "outlier_prob_smooth": 36
+        }
+    },
+    "anomaly_info": [
+        {
+            "start": "2019-03-01 0:10",
+            "end": "2019-03-01 16:30",
+            "anomaly_type": 1,
+            "out_channel": [
+                "Target"
+            ],
+            "in_channel": [
+                "Feature_3",
+                "Feature_5",
+                "Feature_4"
+            ],
+            "increasing": false,
+            "alpha": 0.20,
+            "beta": 0.05,
+            "b": 0.0,
+            "type": "synthetic"
+        },
+        {
+            "start": "2019-03-02 23:40",
+            "end": "2019-03-03 16:10",
+            "anomaly_type": 1,
+            "out_channel": [
+                "Target"
+            ],
+            "in_channel": [
+                "Feature_3",
+                "Feature_5",
+                "Feature_4"
+            ],
+            "increasing": false,
+            "alpha": 0.20,
+            "beta": 0.05,
+            "b": 0.0,
+            "type": "synthetic"
+        },
+        {
+            "start": "2019-03-05 0:20",
+            "end": "2019-03-05 15:20",
+            "anomaly_type": 1,
+            "out_channel": [
+                "Target"
+            ],
+            "in_channel": [
+                "Feature_3",
+                "Feature_5",
+                "Feature_4"
+            ],
+            "increasing": false,
+            "alpha": 0.20,
+            "beta": 0.05,
+            "b": 0.0,
+            "type": "synthetic"
+        },
+        {
+            "start": "2019-03-06 23:40",
+            "end": "2019-03-07 16:00",
+            "anomaly_type": 1,
+            "out_channel": [
+                "Target"
+            ],
+            "in_channel": [
+                "Feature_3",
+                "Feature_5",
+                "Feature_4"
+            ],
+            "increasing": false,
+            "alpha": 0.20,
+            "beta": 0.05,
+            "b": 0.0,
+            "type": "synthetic"
+        },
+        {
+            "start": "2019-03-09 0:00",
+            "end": "2019-03-09 16:00",
+            "anomaly_type": 1,
+            "out_channel": [
+                "Target"
+            ],
+            "in_channel": [
+                "Feature_3",
+                "Feature_5",
+                "Feature_4"
+            ],
+            "increasing": false,
+            "alpha": 0.20,
+            "beta": 0.05,
+            "b": 0.0,
+            "type": "synthetic"
+        },
+        {
+            "start": "2019-03-11 0:10",
+            "end": "2019-03-11 16:20",
+            "anomaly_type": 1,
+            "out_channel": [
+                "Target"
+            ],
+            "in_channel": [
+                "Feature_3",
+                "Feature_5",
+                "Feature_4"
+            ],
+            "increasing": false,
+            "alpha": 0.20,
+            "beta": 0.05,
+            "b": 0.0,
+            "type": "synthetic"
+        },
+        {
+            "start": "2019-03-13 0:30",
+            "end": "2019-03-13 17:00",
+            "anomaly_type": 1,
+            "out_channel": [
+                "Target"
+            ],
+            "in_channel": [
+                "Feature_3",
+                "Feature_5",
+                "Feature_4"
+            ],
+            "increasing": false,
+            "alpha": 0.20,
+            "beta": 0.05,
+            "b": 0.0,
+            "type": "synthetic"
+        },
+        {
+            "start": "2019-03-15 0:30",
+            "end": "2019-03-15 17:00",
+            "anomaly_type": 1,
+            "out_channel": [
+                "Target"
+            ],
+            "in_channel": [
+                "Feature_3",
+                "Feature_5",
+                "Feature_4"
+            ],
+            "increasing": false,
+            "alpha": 0.20,
+            "beta": 0.05,
+            "b": 0.0,
+            "type": "synthetic"
+        },
+        {
+            "start": "2019-03-17 0:30",
+            "end": "2019-03-17 17:00",
+            "anomaly_type": 1,
+            "out_channel": [
+                "Target"
+            ],
+            "in_channel": [
+                "Feature_3",
+                "Feature_5",
+                "Feature_4"
+            ],
+            "increasing": false,
+            "alpha": 0.5,
+            "beta": 0.05,
+            "b": 0.0,
+            "type": "synthetic"
+        },
+        {
+            "start": "2019-03-19 0:30",
+            "end": "2019-03-19 17:00",
+            "anomaly_type": 1,
+            "out_channel": [
+                "Target"
+            ],
+            "in_channel": [
+                "Feature_3",
+                "Feature_5",
+                "Feature_4"
+            ],
+            "increasing": false,
+            "alpha": 0.20,
+            "beta": 0.05,
+            "b": 0.0,
+            "type": "synthetic"
+        },
+        {
+            "start": "2019-05-01 15:40",
+            "end": "2019-05-01 23:10",
+            "anomaly_type": 2,
+            "out_channel": [
+                "Target"
+            ],
+            "in_channel": [
+                "Feature_1",
+                "Feature_2",
+                "Feature_3",
+                "Feature_4",
+                "Feature_5"
+            ],
+            "increasing": false,
+            "alpha": 0.20,
+            "beta": 0.05,
+            "b": 0.03,
+            "type": "synthetic"
+        },
+        {
+            "start": "2019-05-04 16:10",
+            "end": "2019-05-04 23:10",
+            "anomaly_type": 2,
+            "out_channel": [
+                "Target"
+            ],
+            "in_channel": [
+                "Feature_1",
+                "Feature_2",
+                "Feature_3",
+                "Feature_4",
+                "Feature_5"
+            ],
+            "increasing": false,
+            "alpha": 0.20,
+            "beta": 0.05,
+            "b": 0.03,
+            "type": "synthetic"
+        },
+        {
+            "start": "2019-05-07 16:20",
+            "end": "2019-05-07 23:20",
+            "anomaly_type": 2,
+            "out_channel": [
+                "Target"
+            ],
+            "in_channel": [
+                "Feature_1",
+                "Feature_2",
+                "Feature_3",
+                "Feature_4",
+                "Feature_5"
+            ],
+            "increasing": false,
+            "alpha": 0.20,
+            "beta": 0.05,
+            "b": 0.03,
+            "type": "synthetic"
+        },
+        {
+            "start": "2019-05-10 15:50",
+            "end": "2019-05-10 23:10",
+            "anomaly_type": 2,
+            "out_channel": [
+                "Target"
+            ],
+            "in_channel": [
+                "Feature_1",
+                "Feature_2",
+                "Feature_3",
+                "Feature_4",
+                "Feature_5"
+            ],
+            "increasing": false,
+            "alpha": 0.20,
+            "beta": 0.05,
+            "b": 0.03,
+            "type": "synthetic"
+        },
+        {
+            "start": "2019-05-13 16:20",
+            "end": "2019-05-13 23:20",
+            "anomaly_type": 2,
+            "out_channel": [
+                "Target"
+            ],
+            "in_channel": [
+                "Feature_1",
+                "Feature_2",
+                "Feature_3",
+                "Feature_4",
+                "Feature_5"
+            ],
+            "increasing": false,
+            "alpha": 0.20,
+            "beta": 0.05,
+            "b": 0.03,
+            "type": "synthetic"
+        },
+        {
+            "start": "2019-05-16 15:30",
+            "end": "2019-05-16 22:30",
+            "anomaly_type": 2,
+            "out_channel": [
+                "Target"
+            ],
+            "in_channel": [
+                "Feature_1",
+                "Feature_2",
+                "Feature_3",
+                "Feature_4",
+                "Feature_5"
+            ],
+            "increasing": false,
+            "alpha": 0.20,
+            "beta": 0.05,
+            "b": 0.03,
+            "type": "synthetic"
+        },
+        {
+            "start": "2019-05-19 16:10",
+            "end": "2019-05-19 23:20",
+            "anomaly_type": 2,
+            "out_channel": [
+                "Target"
+            ],
+            "in_channel": [
+                "Feature_1",
+                "Feature_2",
+                "Feature_3",
+                "Feature_4",
+                "Feature_5"
+            ],
+            "increasing": false,
+            "alpha": 0.20,
+            "beta": 0.05,
+            "b": 0.03,
+            "type": "synthetic"
+        },
+        {
+            "start": "2019-05-21 16:10",
+            "end": "2019-05-21 23:20",
+            "anomaly_type": 2,
+            "out_channel": [
+                "Target"
+            ],
+            "in_channel": [
+                "Feature_1",
+                "Feature_2",
+                "Feature_3",
+                "Feature_4",
+                "Feature_5"
+            ],
+            "increasing": false,
+            "alpha": 0.20,
+            "beta": 0.05,
+            "b": 0.03,
+            "type": "synthetic"
+        },
+        {
+            "start": "2019-05-24 16:10",
+            "end": "2019-05-24 23:20",
+            "anomaly_type": 2,
+            "out_channel": [
+                "Target"
+            ],
+            "in_channel": [
+                "Feature_1",
+                "Feature_2",
+                "Feature_3",
+                "Feature_4",
+                "Feature_5"
+            ],
+            "increasing": false,
+            "alpha": 0.20,
+            "beta": 0.05,
+            "b": 0.03,
+            "type": "synthetic"
+        },
+        {
+            "start": "2019-10-06 00:00",
+            "end": "2019-10-25 17:30",
+            "anomaly_type": 4,
+            "in_channel": [
+                "Feature_1",
+                "Feature_2",
+                "Feature_3",
+                "Feature_4",
+                "Feature_5"
+            ],
+            "out_channel": [
+                "Target"
+            ],
+            "increasing": false,
+            "alpha": 0.05,
+            "beta": 0.01,
+            "b": 0.00,
+            "type": "synthetic"
+        },
+        {
+            "start": "2019-11-01 22:20",
+            "end": "2019-11-02 21:30",
+            "anomaly_type": 3,
+            "out_channel": [
+                "Target"
+            ],
+            "in_channel": [
+                "Feature_1",
+                "Feature_2",
+                "Feature_3",
+                "Feature_4",
+                "Feature_5"
+            ],
+            "increasing": false,
+            "alpha": 0.1,
+            "beta": 0.01,
+            "b": 0.0,
+            "type": "synthetic"
+        },
+        {
+            "start": "2019-11-04 22:00",
+            "end": "2019-11-05 21:00",
+            "anomaly_type": 3,
+            "out_channel": [
+                "Target"
+            ],
+            "in_channel": [
+                "Feature_1",
+                "Feature_2",
+                "Feature_3",
+                "Feature_4",
+                "Feature_5"
+            ],
+            "increasing": false,
+            "alpha": 0.1,
+            "beta": 0.01,
+            "b": 0.0,
+            "type": "synthetic"
+        },
+        {
+            "start": "2019-11-07 22:50",
+            "end": "2019-11-08 21:20",
+            "anomaly_type": 3,
+            "out_channel": [
+                "Target"
+            ],
+            "in_channel": [
+                "Feature_1",
+                "Feature_2",
+                "Feature_3",
+                "Feature_4",
+                "Feature_5"
+            ],
+            "increasing": false,
+            "alpha": 0.1,
+            "beta": 0.01,
+            "b": 0.0,
+            "type": "synthetic"
+        },
+        {
+            "start": "2019-11-10 22:50",
+            "end": "2019-11-11 21:20",
+            "anomaly_type": 3,
+            "out_channel": [
+                "Target"
+            ],
+            "in_channel": [
+                "Feature_1",
+                "Feature_2",
+                "Feature_3",
+                "Feature_4",
+                "Feature_5"
+            ],
+            "increasing": false,
+            "alpha": 0.1,
+            "beta": 0.01,
+            "b": 0.0,
+            "type": "synthetic"
+        },
+        {
+            "start": "2019-11-13 22:50",
+            "end": "2019-11-14 21:20",
+            "anomaly_type": 3,
+            "out_channel": [
+                "Target"
+            ],
+            "in_channel": [
+                "Feature_1",
+                "Feature_2",
+                "Feature_3",
+                "Feature_4",
+                "Feature_5"
+            ],
+            "increasing": false,
+            "alpha": 0.1,
+            "beta": 0.01,
+            "b": 0.0,
+            "type": "synthetic"
+        },
+        {
+            "start": "2019-11-16 22:20",
+            "end": "2019-11-17 21:40",
+            "anomaly_type": 3,
+            "out_channel": [
+                "Target"
+            ],
+            "in_channel": [
+                "Feature_1",
+                "Feature_2",
+                "Feature_3",
+                "Feature_4",
+                "Feature_5"
+            ],
+            "increasing": false,
+            "alpha": 0.1,
+            "beta": 0.01,
+            "b": 0.0,
+            "type": "synthetic"
+        },
+        {
+            "start": "2019-11-18 22:40",
+            "end": "2019-11-19 21:00",
+            "anomaly_type": 3,
+            "out_channel": [
+                "Target"
+            ],
+            "in_channel": [
+                "Feature_1",
+                "Feature_2",
+                "Feature_3",
+                "Feature_4",
+                "Feature_5"
+            ],
+            "increasing": false,
+            "alpha": 0.1,
+            "beta": 0.01,
+            "b": 0.0,
+            "type": "synthetic"
+        }
+    ]
+}
