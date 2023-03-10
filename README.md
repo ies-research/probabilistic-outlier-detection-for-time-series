@@ -6,7 +6,6 @@ This repository contains Python code to implement the PrOuD (Probabilistic Outli
 ```
 DTS
 ├───anomaly_conf             #anomaly_conf, data_conf, model_conf
-├───real_dataset             #real 10 inverter's dataset
 ├───utils                    #framework implementation
 ├───visualization            #visualization of detection result for real/sytecti dataset
 ├───warmup_models            #The trained prediction model in warmup phase

@@ -11,15 +11,5 @@ dist
 .vscode
 build
 .pytest_cache
-visualization/*.html
-warmup_models/inverter_1*
-warmup_models/inverter_2*
-warmup_models/inverter_3*
-warmup_models/inverter_4*
-warmup_models/inverter_5*
-warmup_models/inverter_6*
-warmup_models/inverter_7*
-warmup_models/inverter_8*
-warmup_models/inverter_9*
 output/*
 .ipynb_checkpoints
