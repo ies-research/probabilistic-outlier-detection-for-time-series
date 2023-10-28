@@ -1,5 +1,5 @@
-# PrOuD: Probabilistic Outlier Detection Based on Uncertainty Estimation for Time Series
-This repository contains Python code to implement the PrOuD (Probabilistic Outlier Detection) framework applied to the experiments the conference paper "Probabilistic Outlier Detection Based on Uncertainty Estimation for Time Series".
+# PrOuD: Probabilistic Outlier Detection for Time Series
+This repository contains Python code to implement the PrOuD (Probabilistic Outlier Detection) framework applied to the experiments the paper "Probabilistic Outlier Detection for Time Series".
 
 ## Code Structure
 
